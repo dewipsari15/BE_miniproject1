@@ -15,19 +15,12 @@ try {
 }
 
 //lokasi router
-import ProductRoute from "./routes/ProductRoute.js";
-import bodyParser from "body-parser";
-app.use("/api/product", ProductRoute);
-// import invest from "./routes/Invest.js";
-// app.use("/api/invest", invest);
-// import wallet from "./routes/Wallet.js";
-// app.use("/api/wallet", wallet);
-// import user from "./routes/Users.js";
-// app.use("/api/user", user);
+import index from "../AppServer/routes/index.js";
+app.use("/api/book", index);
 
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(router);
 
-app.listen(5000, () => console.log("Server running at port 5000"));
+app.listen(4000, () => console.log("Server running at port 4000"));
